@@ -15,6 +15,7 @@ if (localStorage.customTheme) {
 // Reload an existing game in localStorage
 if (localStorage.saveBoard) {
   // load the saved board state
+  // load the saved player (localStorage.savePlayer)
 }
 
 // Reset the game
@@ -46,6 +47,7 @@ function placePiece() {
           boardCol[a].removeEventListener('click', placePiece);
         }
         gameText.innerText = 'Player ' + activePlayer + ' wins!';
+        localStorage.savePlayer = 1;
       }
       else {
         if (activePlayer === 1) { activePlayer = 2; }
