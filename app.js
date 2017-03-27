@@ -1,6 +1,6 @@
 'use strict';
 
-var theBoard = [[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]];
+var theBoard = [[], [], [], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [], [], []];
 var boardCol = document.getElementsByClassName('board-col');
 var gameText = document.getElementById('game-text');
 var activePlayer = 1;
@@ -31,14 +31,14 @@ boardCol[5].addEventListener('click', placePiece);
 boardCol[6].addEventListener('click', placePiece);
 
 function placePiece() {
-  var colPos = this.getAttribute('boardpos') - 1;
-  for (var i = 0; i < theBoard[colPos].length; i++) {
+  var colPos = parseInt(this.getAttribute('boardpos')) + 2;
+  for (var i = 3; i < theBoard[colPos].length - 3; i++) {
     if (theBoard[colPos][i] === 0) {
       if (activePlayer === 1) {
-        this.children[5 - i].children[0].style.backgroundColor = playerOneColor;
+        this.children[8 - i].children[0].style.backgroundColor = playerOneColor;
       }
       else {
-        this.children[5 - i].children[0].style.backgroundColor = playerTwoColor;
+        this.children[8 - i].children[0].style.backgroundColor = playerTwoColor;
       }
       theBoard[colPos][i] = activePlayer;
       if (checkForWinner(colPos, i)) {
@@ -65,7 +65,6 @@ function checkForWinner(x,y) {
   if (theBoard[x][y + 1] === activePlayer && theBoard[x][y + 2] === activePlayer && theBoard[x][y - 1] === activePlayer) { return true; }
   if (theBoard[x][y + 1] === activePlayer && theBoard[x][y - 1] === activePlayer && theBoard[x][y - 2] === activePlayer) { return true; }
   if (theBoard[x][y - 1] === activePlayer && theBoard[x][y - 2] === activePlayer && theBoard[x][y - 3] === activePlayer) { return true; }
-  debugger;
   // testing for a winner sideways
   if (theBoard[x + 1][y] === activePlayer && theBoard[x + 2][y] === activePlayer && theBoard[x + 3][y] === activePlayer) { return true; }
   if (theBoard[x + 1][y] === activePlayer && theBoard[x + 2][y] === activePlayer && theBoard[x - 1][y] === activePlayer) { return true; }
