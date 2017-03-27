@@ -1,5 +1,8 @@
+* {
+  box-sizing: border-box;
+}
 body {
-background-color: #011efe;
+  background-color: #fdfe02;
 }
 
 nav {
@@ -15,15 +18,25 @@ nav {
 }
 
 #board {
-  background-color: #fdfe02;
-  border: solid black 1px;
+  background-color: #011efe;
+  width: 700px;
+  height: 600px;
+  padding: 0px;
+  border-width: 0px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: auto;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .board-col {
-  border: solid black 1px;
   height: 600px;
-  width: 100px;
+  width: 96px;
   display: inline-block;
+  padding: 0px;
+  border-width: 0px;
+  margin: 0px;
 }
 
 #col1 {
@@ -51,19 +64,19 @@ nav {
 }
 
 #col7 {
-
+  /*width: 96px;*/
 }
 
 .board-piece {
   background-color: #fdfe02;
-  height: 80%;
-  width: 80%;
-  margin: 10%;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
-  border-position: absolute;
-
-
-
+  position: relative;
+  top: 10px;
+  left: 10px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .board-hole {
@@ -73,5 +86,12 @@ nav {
 }
 
 #game-text {
+  text-align: center;
+  color: #011efe;
+  font-weight: bold;
+  margin-top: 20px;
+}
 
+h1 {
+  display: none;
 }
