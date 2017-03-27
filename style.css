@@ -1,5 +1,5 @@
 body {
-
+background-color: #011efe;
 }
 
 nav {
@@ -15,45 +15,54 @@ nav {
 }
 
 #board {
-
+  background-color: #fdfe02
+  border: solid black 1px;
 }
 
 .board-col {
-
+  border: solid black 1px;
+  height: 100px;
 }
 
 #col1 {
-
+  border: solid black 1px;
+  width: 100px;
 }
 
 #col2 {
-
+  border: solid black 1px;
+  width: 100px;
 }
 
 #col3 {
-
+  border: solid black 1px;
+  width: 100px;
 }
 
 #col4 {
-
+  border: solid black 1px;
+  width: 100px;
 }
 
 #col5 {
-
+  border: solid black 1px;
+  width: 100px;
 }
 
 #col6 {
-
+  border: solid black 1px;
+  width: 100px;
 }
 
 #col7 {
-
+  border: solid black 1px;
+  width: 100px;
 }
 
 .board-piece {
-
+  display: hidden;
 }
 
 .board-hole {
-  display: hidden;
+
 }
