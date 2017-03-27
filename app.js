@@ -3,6 +3,8 @@
 var theBoard = [[], [], [], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [], [], []];
 var boardCol = document.getElementsByClassName('board-col');
 var gameText = document.getElementById('game-text');
+var navButton = document.getElementById('nav-button');
+var navBox = document.getElementById('nav-box');
 var activePlayer = 1;
 var playerOneColor = '#000000';
 var playerTwoColor = '#FF0000';
@@ -21,6 +23,16 @@ if (localStorage.saveBoard) {
 // Reset the game
 
 // Listen for a click on the nav-button, and display the nav-box
+navButton.addEventListener('click', displayBox);
+navBox.addEventListener('mouseout', hideBox);
+
+function displayBox() {
+  navBox.setAttribute('style', 'display: block');
+}
+
+function hideBox() {
+  navBox.setAttribute('style', 'display: none');
+}
 
 // Basic game functionality
 boardCol[0].addEventListener('click', placePiece);

@@ -10,10 +10,14 @@ nav {
 }
 
 #nav-button {
-
+  position: fixed;
+  font-size: 40px;
 }
 
 #nav-box {
+  position: fixed;
+  top: 50px;
+  left: 45px;
 
 }
 
