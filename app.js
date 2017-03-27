@@ -4,6 +4,8 @@ var theBoard = [[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 
 var boardCol = document.getElementsByClassName('board-col');
 var gameText = document.getElementById('game-text');
 var activePlayer = 1;
+var playerOneColor = '#000000';
+var playerTwoColor = '#FF0000';
 
 // Use any custom theme, if available
 if (localStorage.customTheme) {
@@ -26,9 +28,12 @@ function placePiece() {
   var colPos = this.getAttribute('boardpos') - 1;
   for (var i = 0; i < theBoard[colPos].length; i++) {
     if (theBoard[colPos][i] === 0) {
-      // place the piece here
-        // figure out which div corresponds to this
-        // change that div's color to the appropriate color for the activePlayer
+      if (activePlayer === 1) {
+        this.childNodes[5 - i].style.backgroundColor = playerOneColor;
+      }
+      else {
+        this.childNodes[5 - i].style.backgroundColor = playerTwoColor;
+      }
       theBoard[colPos][i] = activePlayer;
       if (checkForWinner(colPos, i)) {
         boardCol.removeEventListener('click', placePiece);
