@@ -22,7 +22,13 @@ if (localStorage.saveBoard) {
 // Listen for a click on the nav-button, and display the nav-box
 
 // Basic game functionality
-boardCol.addEventListener('click', placePiece);
+boardCol[0].addEventListener('click', placePiece);
+boardCol[1].addEventListener('click', placePiece);
+boardCol[2].addEventListener('click', placePiece);
+boardCol[3].addEventListener('click', placePiece);
+boardCol[4].addEventListener('click', placePiece);
+boardCol[5].addEventListener('click', placePiece);
+boardCol[6].addEventListener('click', placePiece);
 
 function placePiece() {
   var colPos = this.getAttribute('boardpos') - 1;
@@ -43,8 +49,9 @@ function placePiece() {
         if (activePlayer === 1) { activePlayer = 2; }
         if (activePlayer === 2) { activePlayer = 1; }
         gameText.innerText = 'Player ' + activePlayer + ', it\'s your turn';
+        localStorage.savePlayer = activePlayer;
       }
-      localStorage.saveBoard(JSON.stringify(theBoard));
+      localStorage.saveBoard = JSON.stringify(theBoard);
       break;
     }
   }
