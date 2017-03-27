@@ -35,19 +35,21 @@ function placePiece() {
   for (var i = 0; i < theBoard[colPos].length; i++) {
     if (theBoard[colPos][i] === 0) {
       if (activePlayer === 1) {
-        this.childNodes[5 - i].firstChild.style.backgroundColor = playerOneColor;
+        this.children[5 - i].children[0].style.backgroundColor = playerOneColor;
       }
       else {
-        this.childNodes[5 - i].firstChild.style.backgroundColor = playerTwoColor;
+        this.children[5 - i].children[0].style.backgroundColor = playerTwoColor;
       }
       theBoard[colPos][i] = activePlayer;
       if (checkForWinner(colPos, i)) {
-        boardCol.removeEventListener('click', placePiece);
+        for (var a = 0; a < boardCol.length; a++) {
+          boardCol[a].removeEventListener('click', placePiece);
+        }
         gameText.innerText = 'Player ' + activePlayer + ' wins!';
       }
       else {
         if (activePlayer === 1) { activePlayer = 2; }
-        if (activePlayer === 2) { activePlayer = 1; }
+        else { activePlayer = 1; }
         gameText.innerText = 'Player ' + activePlayer + ', it\'s your turn';
         localStorage.savePlayer = activePlayer;
       }
@@ -63,6 +65,7 @@ function checkForWinner(x,y) {
   if (theBoard[x][y + 1] === activePlayer && theBoard[x][y + 2] === activePlayer && theBoard[x][y - 1] === activePlayer) { return true; }
   if (theBoard[x][y + 1] === activePlayer && theBoard[x][y - 1] === activePlayer && theBoard[x][y - 2] === activePlayer) { return true; }
   if (theBoard[x][y - 1] === activePlayer && theBoard[x][y - 2] === activePlayer && theBoard[x][y - 3] === activePlayer) { return true; }
+  debugger;
   // testing for a winner sideways
   if (theBoard[x + 1][y] === activePlayer && theBoard[x + 2][y] === activePlayer && theBoard[x + 3][y] === activePlayer) { return true; }
   if (theBoard[x + 1][y] === activePlayer && theBoard[x + 2][y] === activePlayer && theBoard[x - 1][y] === activePlayer) { return true; }
