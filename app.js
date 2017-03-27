@@ -29,10 +29,10 @@ function placePiece() {
   for (var i = 0; i < theBoard[colPos].length; i++) {
     if (theBoard[colPos][i] === 0) {
       if (activePlayer === 1) {
-        this.childNodes[5 - i].style.backgroundColor = playerOneColor;
+        this.childNodes[5 - i].firstChild.style.backgroundColor = playerOneColor;
       }
       else {
-        this.childNodes[5 - i].style.backgroundColor = playerTwoColor;
+        this.childNodes[5 - i].firstChild.style.backgroundColor = playerTwoColor;
       }
       theBoard[colPos][i] = activePlayer;
       if (checkForWinner(colPos, i)) {
