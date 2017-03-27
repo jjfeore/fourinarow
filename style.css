@@ -11,13 +11,13 @@ nav {
 
 #nav-button {
   position: fixed;
-  font-family: 'fa fa-bars';
-  height: 60px;
-  width: 60px;
+  font-size: 40px;
 }
 
 #nav-box {
   position: fixed;
+  top: 50px;
+  left: 45px;
 
 }
 
