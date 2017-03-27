@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
 background-color: #011efe;
 }
@@ -16,14 +19,21 @@ nav {
 
 #board {
   background-color: #fdfe02;
-  border: solid black 1px;
+  text-align: center;
+  width: 800px;
+  padding: 0px;
+  border-width: 0px;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 .board-col {
-  border: solid black 1px;
   height: 600px;
   width: 100px;
   display: inline-block;
+  padding: 0px;
+  border-width: 0px;
+  margin: 0px;
 }
 
 #col1 {
@@ -56,14 +66,14 @@ nav {
 
 .board-piece {
   background-color: #fdfe02;
-  height: 80%;
-  width: 80%;
-  margin: 10%;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
-  border-position: absolute;
-
-
-
+  position: relative;
+  top: 10px;
+  left: 10px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .board-hole {
