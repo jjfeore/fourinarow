@@ -23,11 +23,17 @@ if (localStorage.saveBoard) {
 // Reset the game
 
 // Listen for a click on the nav-button, and display the nav-box
+navBox.style.display = 'none';
 navButton.addEventListener('click', displayBox);
 navBox.addEventListener('mouseleave', hideBox);
 
 function displayBox() {
-  navBox.setAttribute('style', 'display: block');
+  if (navBox.style.display === 'none') {
+    navBox.setAttribute('style', 'display: block');
+  }
+  else {
+    navBox.style.display = 'none';
+  }
 }
 
 function hideBox() {
