@@ -9,23 +9,26 @@ var activePlayer = 1;
 var gameTheme = ['#FDFE02', '#011EFE', '#000000', '#FF0000'];
 var playerOneColor = gameTheme[2];
 var playerTwoColor = gameTheme[3];
+localStorage.setItem('customTheme', JSON.stringify(gameTheme));
 
 function setCustomTheme () {
-  if (localStorage.customTheme) {
-    gameTheme = localStorage.getItem(JSON.parse(customTheme));
+  if (localStorage.getItem('customTheme')) {
+    gameTheme = JSON.parse(localStorage.getItem('customTheme'));
+    console.log(gameTheme);
     document.body.style.backgroundColor = gameTheme[0];
     document.getElementById('board').style.backgroundColor = gameTheme[1];
-    document.getElementsByClassName('board-hole').style.backgroundColor = gameTheme[0];
     document.getElementById('player-one').style.backgroundColor = gameTheme[2];
     document.getElementById('player-two').style.backgroundColor = gameTheme[3];
+    document.getElementsByClassName('board-hole').style.backgroundColor = gameTheme[0];
   };
 }
+//setCustomTheme();
 
 // Reload an existing game in localStorage
-if (localStorage.saveBoard) {
+//if (localStorage.saveBoard) {
   // load the saved board state
   // load the saved player (localStorage.savePlayer)
-}
+//}
 
 // Reset the game
 function resetData() {

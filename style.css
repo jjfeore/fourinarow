@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #011efe;
+  background-color: #011EFE;
   font-family: 'Baloo Bhaina', Helvetica, sans-serif;
 }
 
@@ -69,7 +69,7 @@ display: block;
 }
 
 #board {
-  background-color: #fdfe02;
+  background-color: #011EFE;
   width: 700px;
   height: 600px;
   padding: 0px;
@@ -130,7 +130,7 @@ h1 {
   left: 0;
   right: 0;
   margin: auto;
-  background-color: #fdfe02;
+  background-color: #FDFE02;
   border-radius: 16px;
 }
 

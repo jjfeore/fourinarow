@@ -13,7 +13,7 @@ var lightTheme = ['#FFFFFF', '#8f8f8f', '#666666', '#d6d6d6'];
 var dolphinTheme = ['#008D97', '#F5811F', '#000000', '#FF0000'];
 var seahawkTheme = ['#002244', '#69BE28', '#A5ACAF', '#FF0000'];
 
-theButton.addEventListener('click', changeTheme);
+//theButton.addEventListener('click', changeTheme);
 
 function changeTheme() {
   var selectedOption = document.getElementById('select-box').value;
