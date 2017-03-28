@@ -6,10 +6,6 @@ body {
   font-family: 'Baloo Bhaina', Helvetica, sans-serif;
 }
 
-nav {
-
-}
-
 #nav-button {
   width: 50px;
   height: 50px;
@@ -23,11 +19,53 @@ nav {
   color: #fdfe02;
 }
 
+#refresh-button {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 100%;
+  position: fixed;
+  left: 90px;
+  top: 20px;
+  font-size: 30px;
+  text-align: center;
+  color: #fdfe02;
+}
+
+nav a {
+  text-decoration: none;
+}
+
 #nav-box {
   position: fixed;
-  top: 50px;
-  left: 45px;
+  top: 80px;
+  left: 20px;
+  width: 10%;
+  height: 90px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: none;
+}
 
+.link-span {
+height: 30px;
+width: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+color: #fdfe02;
+font-size: 20px;
+padding: 8px 0px 2px 0px;
+margin: 0px;
+line-height: 20px;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+display: block;
+}
+
+.link-span:hover {
+  background-color: #fdfe02;
+  opacity: 0.5;
+  color: #000;
 }
 
 #board {
@@ -50,34 +88,6 @@ nav {
   padding: 0px;
   border-width: 0px;
   margin: 0px;
-}
-
-#col1 {
-
-}
-
-#col2 {
-
-}
-
-#col3 {
-
-}
-
-#col4 {
-
-}
-
-#col5 {
-
-}
-
-#col6 {
-
-}
-
-#col7 {
-  /*width: 96px;*/
 }
 
 .board-piece {
