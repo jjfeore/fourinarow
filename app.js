@@ -88,6 +88,15 @@ function placePiece() {
     }
   }
 }
+//Save game board on browsesr close
+function saveYourGame () {
+  localStorage.setItem(JSON.stringify('theBoard'));
+  window.onbeforeunload = null;
+}
+function saveBeforeClose(){
+  setTimeout(saveYourGame, 0);
+}
+window.onbeforeunload = saveBeforeClose;
 
 function checkForWinner(x,y) {
   // testing for a winner straight up and down
