@@ -6,12 +6,19 @@ var gameText = document.getElementById('game-text');
 var navButton = document.getElementById('nav-button');
 var navBox = document.getElementById('nav-box');
 var activePlayer = 1;
-var playerOneColor = '#000000';
-var playerTwoColor = '#FF0000';
+var gameTheme = ['#FDFE02', '#011EFE', '#000000', '#FF0000'];
+var playerOneColor = gameTheme[2];
+var playerTwoColor = gameTheme[3];
 
-// Use any custom theme, if available
-if (localStorage.customTheme) {
-  // then use the custom theme
+function setCustomTheme () {
+  if (localStorage.customTheme) {
+    gameTheme = localStorage.getItem(JSON.parse(customTheme));
+    document.body.style.backgroundColor = gameTheme[0];
+    document.getElementById('board').style.backgroundColor = gameTheme[1];
+    document.getElementsByClassName('board-hole').style.backgroundColor = gameTheme[0];
+    document.getElementById('player-one').style.backgroundColor = gameTheme[2];
+    document.getElementById('player-two').style.backgroundColor = gameTheme[3];
+  };
 }
 
 // Reload an existing game in localStorage
