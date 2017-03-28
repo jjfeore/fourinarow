@@ -11,8 +11,16 @@ nav {
 }
 
 #nav-button {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 100%;
   position: fixed;
-  font-size: 40px;
+  left: 20px;
+  top: 20px;
+  font-size: 30px;
+  text-align: center;
+  color: #fdfe02;
 }
 
 #nav-box {
@@ -30,7 +38,7 @@ nav {
   border-width: 0px;
   border-collapse: collapse;
   border-spacing: 0;
-  margin: auto;
+  margin: -25px auto 0px auto;
   border-radius: 16px;
   overflow: hidden;
 }
@@ -93,6 +101,7 @@ nav {
 #game-text {
   text-align: center;
   color: #fdfe02;
+  font-size: 30px;
   font-weight: bold;
   margin-top: 20px;
 }
