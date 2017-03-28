@@ -90,7 +90,7 @@ function placePiece() {
 }
 //Save game board on browsesr close
 function saveYourGame () {
-  localStorage.setItem(JSON.stringify('theBoard'));
+  localStorage.setItem('plavers positions', JSON.stringify('placePiece'));
   window.onbeforeunload = null;
 }
 function saveBeforeClose(){
