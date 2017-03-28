@@ -120,8 +120,8 @@ h3 {
   font-weight: bold;
   text-align: center;
   padding: 0;
-  color: #FFF;
-  text-shadow: 2px 2px 3px #000;
+  color: #000;
+  text-shadow: 2px 2px 3px #FFF;
   -webkit-margin-before: 0px;
   -webkit-margin-after: 0px;
   -webkit-margin-start: 0px;
@@ -149,10 +149,10 @@ button {
   background-color: #011efe;
   font-family: 'Baloo Bhaina', Helvetica, sans-serif;
   font-size: 16px;
-  color: #000;
+  color: #FFF;
   font-weight: bold;
   text-align: center;
-  text-shadow: 2px 2px 3px #FFF;
+  text-shadow: 2px 2px 3px #000;
 }
 
 #center-this {

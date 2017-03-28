@@ -24,7 +24,7 @@ if (localStorage.saveBoard) {
 
 // Listen for a click on the nav-button, and display the nav-box
 navButton.addEventListener('click', displayBox);
-navBox.addEventListener('mouseout', hideBox);
+navBox.addEventListener('mouseleave', hideBox);
 
 function displayBox() {
   navBox.setAttribute('style', 'display: block');
@@ -35,13 +35,15 @@ function hideBox() {
 }
 
 // Basic game functionality
-boardCol[0].addEventListener('click', placePiece);
-boardCol[1].addEventListener('click', placePiece);
-boardCol[2].addEventListener('click', placePiece);
-boardCol[3].addEventListener('click', placePiece);
-boardCol[4].addEventListener('click', placePiece);
-boardCol[5].addEventListener('click', placePiece);
-boardCol[6].addEventListener('click', placePiece);
+if (boardCol.length > 0) {
+  boardCol[0].addEventListener('click', placePiece);
+  boardCol[1].addEventListener('click', placePiece);
+  boardCol[2].addEventListener('click', placePiece);
+  boardCol[3].addEventListener('click', placePiece);
+  boardCol[4].addEventListener('click', placePiece);
+  boardCol[5].addEventListener('click', placePiece);
+  boardCol[6].addEventListener('click', placePiece);
+}
 
 function placePiece() {
   var colPos = parseInt(this.getAttribute('boardpos')) + 2;
