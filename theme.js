@@ -37,6 +37,11 @@ function changeTheme() {
     document.getElementById('theme-select').style.backgroundColor = seahawkTheme[1];
     document.getElementById('player-one').style.backgroundColor = seahawkTheme[2];
     document.getElementById('player-two').style.backgroundColor = seahawkTheme[3];
+  } else {
+    document.body.style.backgroundColor = defaultTheme[0];
+    document.getElementById('theme-select').style.backgroundColor = defaultTheme[1];
+    document.getElementById('player-one').style.backgroundColor = defaultTheme[2];
+    document.getElementById('player-two').style.backgroundColor = defaultTheme[3];
   }
 }
 
