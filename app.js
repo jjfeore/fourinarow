@@ -21,6 +21,14 @@ if (localStorage.saveBoard) {
 }
 
 // Reset the game
+function resetData() {
+  var confirmReset = confirm('This will erase all previous results and start a new session, are you sure?');
+  if (confirmReset) {
+    localStorage.clear();
+    window.location.reload();
+  }
+}
+resetBtn.addEventListener('click', resetData);
 
 // Listen for a click on the nav-button, and display the nav-box
 navBox.style.display = 'none';
