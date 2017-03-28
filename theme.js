@@ -14,5 +14,18 @@ var lightTheme = ['#FFFFFF', '#8f8f8f', '#666666', '#d6d6d6'];
 theButton.addEventListener('click', changeTheme);
 
 function changeTheme() {
-  // change the theme
+  var selectedOption = document.getElementById('select-box').value;
+  if (selectedOption === 'dark') {
+    document.body.style.backgroundColor = darkTheme[0];
+    document.getElementById('theme-select').style.backgroundColor = darkTheme[1];
+    document.getElementById('player-one').style.backgroundColor = darkTheme[2];
+    document.getElementById('player-two').style.backgroundColor = darkTheme[3];
+  }  else if (selectedOption === 'light') {
+    document.body.style.backgroundColor = lightTheme[0];
+    document.getElementById('theme-select').style.backgroundColor = lightTheme[1];
+    document.getElementById('player-one').style.backgroundColor = lightTheme[2];
+    document.getElementById('player-two').style.backgroundColor = lightTheme[3];
+  }
 }
+
+theButton.addEventListener('click', changeTheme);
