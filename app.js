@@ -48,6 +48,14 @@ function setTheme() {
     document.getElementById('theme-button').style.backgroundColor = gameTheme[0];
     document.getElementById('theme-button').style.color = gameTheme[1];
   }
+  if (document.getElementById('profile-area')) {
+    document.getElementById('page-title').style.color = gameTheme[1];
+    var teamMembers = document.getElementsByClassName('team-member');
+    for (var i = 0; i < teamMembers.length; i++) {
+      teamMembers[i].style.backgroundColor = gameTheme[1];
+      teamMembers[i].style.color = gameTheme[0];
+    }
+  }
 }
 setTheme();
 
