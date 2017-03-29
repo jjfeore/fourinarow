@@ -15,36 +15,41 @@ var gameTheme = ['#011EFE', '#FDFE02', '#000000', '#FF0000'];
 var playerOneColor = gameTheme[2];
 var playerTwoColor = gameTheme[3];
 
-if (localStorage.customTheme) {
-  gameTheme = JSON.parse(localStorage.customTheme);
-}
-document.body.style.backgroundColor = gameTheme[0];
-navButton.style.color = gameTheme[0];
-navButton.style.backgroundColor = gameTheme[1];
-for (var i = 0; i < linkSpan.length; i++) {
-  linkSpan[i].style.color = gameTheme[0];
-  linkSpan[i].style.backgroundColor = gameTheme[1];
-}
-
-if (document.getElementById('board')) {
-  gameText.style.color = gameTheme[1];
-  document.getElementById('board').style.backgroundColor = gameTheme[1];
-  resetBtn.style.backgroundColor = gameTheme[1];
-  resetBtn.style.color = gameTheme[0];
-  document.getElementById('confirm-span').style.color = gameTheme[0];
-  document.getElementById('confirm-span').style.backgroundColor = gameTheme[1];
-  var boardHoles = document.getElementsByClassName('board-hole');
-  var boardPieces = document.getElementsByClassName('board-piece');
-  for (var i = 0; i < boardHoles.length; i++) {
-    boardHoles[i].style.backgroundColor = gameTheme[1];
-    boardPieces[i].style.backgroundColor = gameTheme[0];
+function setTheme() {
+  if (localStorage.customTheme) {
+    gameTheme = JSON.parse(localStorage.customTheme);
+  }
+  document.body.style.backgroundColor = gameTheme[0];
+  navButton.style.color = gameTheme[0];
+  navButton.style.backgroundColor = gameTheme[1];
+  for (var i = 0; i < linkSpan.length; i++) {
+    linkSpan[i].style.color = gameTheme[0];
+    linkSpan[i].style.backgroundColor = gameTheme[1];
+  }
+  if (document.getElementById('board')) {
+    gameText.style.color = gameTheme[1];
+    document.getElementById('board').style.backgroundColor = gameTheme[1];
+    resetBtn.style.backgroundColor = gameTheme[1];
+    resetBtn.style.color = gameTheme[0];
+    document.getElementById('confirm-span').style.color = gameTheme[0];
+    document.getElementById('confirm-span').style.backgroundColor = gameTheme[1];
+    var boardHoles = document.getElementsByClassName('board-hole');
+    var boardPieces = document.getElementsByClassName('board-piece');
+    for (var i = 0; i < boardHoles.length; i++) {
+      boardHoles[i].style.backgroundColor = gameTheme[1];
+      boardPieces[i].style.backgroundColor = gameTheme[0];
+    }
+  }
+  if (document.getElementById('player-one')) {
+    document.getElementById('player-one').style.backgroundColor = gameTheme[2];
+    document.getElementById('player-two').style.backgroundColor = gameTheme[3];
+    document.getElementById('theme-select').style.backgroundColor = gameTheme[1];
+    document.getElementById('theme-select').style.color = gameTheme[0];
+    document.getElementById('theme-button').style.backgroundColor = gameTheme[0];
+    document.getElementById('theme-button').style.color = gameTheme[1];
   }
 }
-
-if (document.getElementById('player-one')) {
-  document.getElementById('player-one').style.backgroundColor = gameTheme[2];
-  document.getElementById('player-two').style.backgroundColor = gameTheme[3];
-}
+setTheme();
 
 // Reload an existing game in localStorage
 if (localStorage.saveBoard) {
