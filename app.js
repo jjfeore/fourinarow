@@ -5,14 +5,61 @@ var boardCol = document.getElementsByClassName('board-col');
 var gameText = document.getElementById('game-text');
 var navButton = document.getElementById('nav-button');
 var navBox = document.getElementById('nav-box');
+var resetBtn = document.getElementById('refresh-button');
+var resetBox = document.getElementById('reset-box');
+var resetYes = document.getElementById('reset-yes');
+var resetNo = document.getElementById('reset-no');
+var linkSpan = document.getElementsByClassName('link-span');
 var activePlayer = 1;
-var playerOneColor = '#000000';
-var playerTwoColor = '#FF0000';
+var gameTheme = ['#011EFE', '#FDFE02', '#000000', '#FF0000'];
+var playerOneColor = gameTheme[2];
+var playerTwoColor = gameTheme[3];
 
-// Use any custom theme, if available
-if (localStorage.customTheme) {
-  // then use the custom theme
+function setTheme() {
+  if (localStorage.customTheme) {
+    gameTheme = JSON.parse(localStorage.customTheme);
+  }
+  document.body.style.backgroundColor = gameTheme[0];
+  navButton.style.color = gameTheme[0];
+  navButton.style.backgroundColor = gameTheme[1];
+  playerOneColor = gameTheme[2];
+  playerTwoColor = gameTheme[3];
+  for (var i = 0; i < linkSpan.length; i++) {
+    linkSpan[i].style.color = gameTheme[0];
+    linkSpan[i].style.backgroundColor = gameTheme[1];
+  }
+  if (document.getElementById('board')) {
+    gameText.style.color = gameTheme[1];
+    document.getElementById('board').style.backgroundColor = gameTheme[1];
+    resetBtn.style.backgroundColor = gameTheme[1];
+    resetBtn.style.color = gameTheme[0];
+    document.getElementById('confirm-span').style.color = gameTheme[0];
+    document.getElementById('confirm-span').style.backgroundColor = gameTheme[1];
+    var boardHoles = document.getElementsByClassName('board-hole');
+    var boardPieces = document.getElementsByClassName('board-piece');
+    for (var i = 0; i < boardHoles.length; i++) {
+      boardHoles[i].style.backgroundColor = gameTheme[1];
+      boardPieces[i].style.backgroundColor = gameTheme[0];
+    }
+  }
+  if (document.getElementById('player-one')) {
+    document.getElementById('player-one').style.backgroundColor = gameTheme[2];
+    document.getElementById('player-two').style.backgroundColor = gameTheme[3];
+    document.getElementById('theme-select').style.backgroundColor = gameTheme[1];
+    document.getElementById('theme-select').style.color = gameTheme[0];
+    document.getElementById('theme-button').style.backgroundColor = gameTheme[0];
+    document.getElementById('theme-button').style.color = gameTheme[1];
+  }
+  if (document.getElementById('profile-area')) {
+    document.getElementById('page-title').style.color = gameTheme[1];
+    var teamMembers = document.getElementsByClassName('team-member');
+    for (var i = 0; i < teamMembers.length; i++) {
+      teamMembers[i].style.backgroundColor = gameTheme[1];
+      teamMembers[i].style.color = gameTheme[0];
+    }
+  }
 }
+setTheme();
 
 // Reload an existing game in localStorage
 if (localStorage.saveBoard) {
@@ -23,14 +70,32 @@ if (localStorage.saveBoard) {
 }
 
 // Reset the game
-function resetData() {
-  var confirmReset = confirm('This will erase all previous results and start a new session, are you sure?');
-  if (confirmReset) {
-    localStorage.clear();
-    window.location.reload();
+if (resetBtn) {
+  resetBox.style.display = 'none';
+  resetBtn.addEventListener('click', displayReset);
+  resetBox.addEventListener('mouseleave', hideReset);
+  resetYes.addEventListener('click', resetData);
+  resetNo.addEventListener('click', hideReset);
+}
+
+function displayReset() {
+  if (resetBox.style.display === 'none') {
+    navBox.style.display = 'none';
+    resetBox.setAttribute('style', 'display: block');
+  }
+  else {
+    resetBox.style.display = 'none';
   }
 }
-resetBtn.addEventListener('click', resetData);
+
+function hideReset() {
+  resetBox.setAttribute('style', 'display: none');
+}
+
+function resetData() {
+  localStorage.clear();
+  window.location.reload();
+}
 
 // Listen for a click on the nav-button, and display the nav-box
 navBox.style.display = 'none';
@@ -39,6 +104,7 @@ navBox.addEventListener('mouseleave', hideBox);
 
 function displayBox() {
   if (navBox.style.display === 'none') {
+    if (resetBox) { resetBox.style.display = 'none'; }
     navBox.setAttribute('style', 'display: block');
   }
   else {
