@@ -47,6 +47,8 @@ function setTheme() {
   if (document.getElementById('player-one')) {
     document.getElementById('player-one').style.backgroundColor = gameTheme[2];
     document.getElementById('player-two').style.backgroundColor = gameTheme[3];
+      document.getElementById('player-one').style.color = gameTheme[3];
+      document.getElementById('player-two').style.color = gameTheme[2];
     document.getElementById('theme-select').style.backgroundColor = gameTheme[1];
     document.getElementById('theme-select').style.color = gameTheme[0];
     document.getElementById('custom-theme').style.backgroundColor = gameTheme[1];

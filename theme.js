@@ -15,6 +15,21 @@ themeBox.style.display = 'none';
 theButton.addEventListener('click', changeTheme);
 custButton.addEventListener('click', createTheme);
 
+var theSelect = document.getElementsByTagName('select')[0];
+function renderSelect() {
+  for (var i = 0; i < themeArray.length; i++) {
+    var newOption = document.createElement('option');
+    newOption.value = i;
+    newOption.innerText = themeArray[i][6];
+    theSelect.appendChild(newOption);
+  }
+  newOption = document.createElement('option');
+  newOption.value = 999;
+  newOption.innerText = 'Create a Theme';
+  theSelect.appendChild(newOption);
+}
+renderSelect();
+
 function changeTheme() {
   var selectedOption = document.getElementById('select-box').value;
   if (selectedOption < document.getElementsByTagName('option').length - 1) {
@@ -40,6 +55,10 @@ function createTheme() {
   themeArray.unshift(newTheme);
   localStorage.customTheme = JSON.stringify(themeArray[0]);
   setTheme();
+  for (var i = 0; i < themeArray.length - 1; i++) {
+    theSelect.removeChild(theSelect.childNodes[0]);
+  }
+  renderSelect();
   pageBox.style.display = 'block';
   themeBox.style.display = 'none';
 }
