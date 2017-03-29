@@ -9,28 +9,30 @@ body {
 #nav-button {
   width: 50px;
   height: 50px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #fdfe02;
+  opacity: 0.5;
+  color: #011efe;
   border-radius: 100%;
   position: fixed;
   left: 20px;
   top: 20px;
   font-size: 30px;
   text-align: center;
-  color: #fdfe02;
   pointer: cursor;
 }
 
 #refresh-button {
   width: 50px;
   height: 50px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #fdfe02;
+  opacity: 0.5;
+  color: #011efe;
   border-radius: 100%;
   position: fixed;
   left: 90px;
   top: 20px;
   font-size: 30px;
   text-align: center;
-  color: #fdfe02;
   pointer: cursor;
 }
 
@@ -62,11 +64,11 @@ nav a {
   cursor: pointer;
 }
 
-.confirm-span {
+#confirm-span {
 height: 30px;
 width: 100%;
-background-color: rgba(0, 0, 0, 0.5);
-color: #fdfe02;
+background-color: #fdfe02;
+color: #011efe;
 font-size: 20px;
 padding: 8px 0px 2px 0px;
 margin: 0px;
@@ -81,8 +83,9 @@ cursor: default;
 .link-span {
 height: 30px;
 width: 100%;
-background-color: rgba(0, 0, 0, 0.5);
-color: #fdfe02;
+background-color: #fdfe02;
+opacity: 0.5;
+color: #011efe;
 font-size: 20px;
 padding: 8px 0px 2px 0px;
 margin: 0px;
@@ -95,8 +98,7 @@ display: block;
 
 .link-span:hover {
   background-color: #fdfe02;
-  opacity: 0.5;
-  color: #000;
+  opacity: 1;
 }
 
 #board {
