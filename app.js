@@ -17,11 +17,8 @@ if (localStorage.customTheme) {
 // Reload an existing game in localStorage
 if (localStorage.saveBoard) {
   //load the saved board state
-  var board = getElementsByClassName('board-piece');
-  var loadBoard = localStorage.getItem('saveBoard', saveBoard[i]);
-  var loadSavedGame = JSON.parse(localStorage['saveBoard']);
-  board.children.style.backgroundColor = playerOneColor;
-  board.children.style.backgroundColor = playerTwoColor;
+  var loadBoard = JSON.parse(localStorage.saveBoard);
+  theBoard[].getAttribute('boardpos').innerHTML += loadBoard.saveBoard;
   //load the saved player (localStorage.savePlayer)
 }
 
