@@ -14,6 +14,8 @@ var activePlayer = 1;
 var gameTheme = ['#011EFE', '#FDFE02', '#000000', '#FF0000'];
 var playerOneColor = gameTheme[2];
 var playerTwoColor = gameTheme[3];
+var playerOneName = 'Player 1';
+var playerTwoName = 'Player 2';
 
 function setTheme() {
   if (localStorage.customTheme) {
@@ -53,6 +55,8 @@ function setTheme() {
     document.getElementsByTagName('button')[0].style.color = gameTheme[1];
     document.getElementsByTagName('button')[1].style.backgroundColor = gameTheme[0];
     document.getElementsByTagName('button')[1].style.color = gameTheme[1];
+    document.getElementsByTagName('h3')[0].style.color = gameTheme[0];
+    document.getElementsByTagName('h3')[1].style.color = gameTheme[0];
   }
   if (document.getElementById('profile-area')) {
     document.getElementById('page-title').style.color = gameTheme[1];
