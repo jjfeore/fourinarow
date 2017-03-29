@@ -10,8 +10,8 @@ var selectBox = document.getElementById('select-box');
 var classicTheme = ['#011efe', '#fdfe02', '#000000', '#FF0000'];
 var darkTheme = ['#000000', '#666666', '#FFFFFF', '#333333'];
 var lightTheme = ['#FFFFFF', '#8f8f8f', '#000000', '#666666'];
-var dolphinTheme = ['#008D97', '#F5811F', '#000000', '#FF0000'];
-var seahawkTheme = ['#002244', '#69BE28', '#A5ACAF', '#FF0000'];
+var dolphinTheme = ['#008D97', '#F5811F', '#FFFFFF', '#183048'];
+var seahawkTheme = ['#002244', '#69BE28', '#A5ACAF', '#FFFFFF'];
 
 theButton.addEventListener('click', changeTheme);
 

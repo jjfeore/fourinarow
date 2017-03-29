@@ -22,6 +22,8 @@ function setTheme() {
   document.body.style.backgroundColor = gameTheme[0];
   navButton.style.color = gameTheme[0];
   navButton.style.backgroundColor = gameTheme[1];
+  playerOneColor = gameTheme[2];
+  playerTwoColor = gameTheme[3];
   for (var i = 0; i < linkSpan.length; i++) {
     linkSpan[i].style.color = gameTheme[0];
     linkSpan[i].style.backgroundColor = gameTheme[1];
