@@ -26,12 +26,30 @@
         <option value="dark">Dark</option>
         <option value="dolphin">Miami Dolphins</option>
         <option value="seahawk">Seattle Seahawks</option>
+        <option value="create" id="create-option">Create a Theme</option>
       </select>
-      <button type="button" name="submit-theme" id="theme-button">Use this Theme!</button>
+      <button type="button" name="submit-theme" class="theme-button">Use this Theme!</button>
       <div id="center-this">
         <div id="player-one">P1</div>
         <div id="player-two">P2</div>
       </div>
+    </section>
+    <section id="custom-theme">
+      <h3>Create a Theme</h3>
+      <div id="center-this">
+        <label><input type="text" />Theme Name</label>
+      </div>
+
+      <div id="center-colors">
+        <div class="display-theme" id="page-color"><input type="color" /><br/>Page</div>
+        <div class="display-theme" id="board-color"><input type="color" /><br/>Board</div>
+        <div class="display-theme" id="p1"><input type="color" /><br/>P1</div>
+        <div class="display-theme" id="p2"><input type="color" /><br/>P2</div>
+      </div>
+
+      <label><input type="text" />Player 1's Name</label>
+      <label><input type="text" />Player 2's Name</label>
+      <button type="button" name="submit-custom" class="theme-button">Create Theme</button>
     </section>
     <script src="app.js"></script>
     <script src="theme.js"></script>

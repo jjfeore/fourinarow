@@ -165,6 +165,31 @@ h1 {
   margin: auto;
   background-color: #fdfe02;
   border-radius: 16px;
+  display: none;
+}
+
+#custom-theme {
+  width: 30%;
+  min-width: 200px;
+  height: 230px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #fdfe02;
+  border-radius: 16px;
+  display: block;
+}
+
+input {
+  margin: 0px;
+}
+
+label {
+  padding: 0px;
+  margin: 0px;
 }
 
 h3 {
@@ -212,6 +237,37 @@ button {
   min-width: 160px;
   margin: 10px auto;
   padding: 0px;
+}
+
+#center-colors {
+  width: 430px;
+  min-width: 430px;
+  margin: 10px auto;
+  padding: 0px;
+}
+
+#create-option {
+  font-weight: bold;
+}
+
+.display-theme {
+  float: left;
+  width: 100px;
+  height: 100px;
+  color: #FFF;
+  background-color: #000;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 3px #444;
+  display: inline-block;
+  border-radius: 100%;
+  vertical-align: middle;
+  line-height: 75px;
+  margin-right: 10px;
+}
+
+#p2 {
+  margin-right: 0px;
 }
 
 #player-one {
