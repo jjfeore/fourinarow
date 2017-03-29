@@ -62,11 +62,21 @@ function setTheme() {
 setTheme();
 
 // Reload an existing game in localStorage
-if (localStorage.saveBoard) {
-  //load the saved board state
-  var loadBoard = JSON.parse(localStorage.saveBoard);
-  theBoard[].getAttribute('boardpos').innerHTML += loadBoard.saveBoard;
-  //load the saved player (localStorage.savePlayer)
+
+if (localStorage.saveBoard && document.getElementById('board')) {
+  theBoard = JSON.parse(localStorage.saveBoard);
+  for (var a = 0; a < theBoard.length - 6; a ++) {
+    for (var i = 3; i < theBoard[a + 3].length - 3; i++) {
+      if (theBoard[a + 3][i] === 1) {
+        boardCol[a].children[8 - i].children[0].style.backgroundColor = playerOneColor;
+      }
+      if (theBoard[a + 3][i] === 2) {
+        boardCol[a].children[8 - i].children[0].style.backgroundColor = playerTwoColor;
+      }
+    }
+  }
+  activePlayer = parseInt(localStorage.savePlayer);
+  gameText.innerText = JSON.parse(localStorage.pageText);
 }
 
 // Reset the game
@@ -93,7 +103,9 @@ function hideReset() {
 }
 
 function resetData() {
-  localStorage.clear();
+  var freshBoard = [[], [], [], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [], [], []];
+  localStorage.saveBoard = JSON.stringify(freshBoard);
+  localStorage.savePlayer = 1;
   window.location.reload();
 }
 
@@ -152,6 +164,7 @@ function placePiece() {
         localStorage.savePlayer = activePlayer;
       }
       localStorage.saveBoard = JSON.stringify(theBoard);
+      localStorage.pageText = JSON.stringify(gameText.innerText);
       break;
     }
   }
