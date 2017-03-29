@@ -4,8 +4,8 @@ var theBody = document.getElementsByTagName('body')[0];
 var playerOne = document.getElementById('player-one');
 var playerTwo = document.getElementById('player-two');
 var pageBox = document.getElementById('theme-select');
-var theButton = document.getElementsByClassName('theme-button')[0];
-var custButton = document.getElementsByClassName('theme-button')[1];
+var theButton = document.getElementsByTagName('button')[0];
+var custButton = document.getElementsByTagName('button')[1];
 var selectBox = document.getElementById('select-box');
 
 var classicTheme = ['#011efe', '#fdfe02', '#000000', '#FF0000'];

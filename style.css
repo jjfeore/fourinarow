@@ -171,7 +171,7 @@ h1 {
 #custom-theme {
   width: 30%;
   min-width: 200px;
-  height: 230px;
+  height: 330px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -184,12 +184,13 @@ h1 {
 }
 
 input {
-  margin: 0px;
+  margin: 0px 5px 10px 0px;
 }
 
 label {
   padding: 0px;
-  margin: 0px;
+  margin-left: 120px;
+  display: block;
 }
 
 h3 {
@@ -230,6 +231,11 @@ button {
   font-weight: bold;
   text-align: center;
   text-shadow: 2px 2px 3px #000;
+  clear: both;
+}
+
+#theme-button {
+  margin-top: 10px;
 }
 
 #center-this {
@@ -242,8 +248,9 @@ button {
 #center-colors {
   width: 430px;
   min-width: 430px;
-  margin: 10px auto;
+  margin: auto;
   padding: 0px;
+  overflow: auto;
 }
 
 #create-option {
@@ -262,7 +269,7 @@ button {
   display: inline-block;
   border-radius: 100%;
   vertical-align: middle;
-  line-height: 75px;
+  line-height: 25px;
   margin-right: 10px;
 }
 

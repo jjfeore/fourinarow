@@ -49,10 +49,10 @@ function setTheme() {
     document.getElementById('theme-select').style.color = gameTheme[0];
     document.getElementById('custom-theme').style.backgroundColor = gameTheme[1];
     document.getElementById('custom-theme').style.color = gameTheme[0];
-    document.getElementsByClassName('theme-button')[0].style.backgroundColor = gameTheme[0];
-    document.getElementsByClassName('theme-button')[0].style.color = gameTheme[1];
-    document.getElementsByClassName('theme-button')[1].style.backgroundColor = gameTheme[0];
-    document.getElementsByClassName('theme-button')[1].style.color = gameTheme[1];
+    document.getElementsByTagName('button')[0].style.backgroundColor = gameTheme[0];
+    document.getElementsByTagName('button')[0].style.color = gameTheme[1];
+    document.getElementsByTagName('button')[1].style.backgroundColor = gameTheme[0];
+    document.getElementsByTagName('button')[1].style.color = gameTheme[1];
   }
   if (document.getElementById('profile-area')) {
     document.getElementById('page-title').style.color = gameTheme[1];
