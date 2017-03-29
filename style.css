@@ -342,3 +342,23 @@ button {
   -webkit-margin-end: 0px;
   margin-top: -7px;
 }
+
+#custom-theme {
+  display: none;
+}
+
+#background-color {
+
+}
+
+#board-color {
+
+}
+
+#player1-color {
+
+}
+
+#player2-color {
+
+}

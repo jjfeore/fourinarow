@@ -26,12 +26,28 @@
         <option value="dark">Dark</option>
         <option value="dolphin">Miami Dolphins</option>
         <option value="seahawk">Seattle Seahawks</option>
+        <option value="custom">Custom Theme</option>
       </select>
       <button type="button" name="submit-theme" id="theme-button">Use this Theme!</button>
       <div id="center-this">
         <div id="player-one">P1</div>
         <div id="player-two">P2</div>
       </div>
+    </section>
+    <section id="custom-theme">
+      <h3>Create Your Own Theme</h3>
+      <label>Theme Name<input type="text" name="Theme Name" /></label>
+      <label>Player One Username<input type="text" name="player one username" /><label>
+      <label>Player Two Username<input type="text" name="player two username" /><label>
+      <label for="background-color">Choose a color for your background :</label>
+      <input id="background-color" type="color" />
+      <label for="board-color">Choose a color for your game board :</label>
+      <input id="board-color" type="color" />
+      <label for="player1-color">Choose a color for Player 1 :</label>
+      <input id="player1-color" type="color" />
+      <label for="player2-color">Choose a color for Player 2 :</label>
+      <input id="player2-color" type="color" />
+      <button type="button" name="submit-theme" id="theme-button">Use this Theme!</button>
     </section>
     <script src="app.js"></script>
     <script src="theme.js"></script>
