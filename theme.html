@@ -21,17 +21,26 @@
     <section id="theme-select">
       <h3>Select a Theme</h3>
       <select id="select-box">
-        <option value="classic">Classic</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-        <option value="dolphin">Miami Dolphins</option>
-        <option value="seahawk">Seattle Seahawks</option>
       </select>
-      <button type="button" name="submit-theme" id="theme-button">Use this Theme!</button>
+      <button type="button" name="submit-theme">Use this Theme!</button>
       <div id="center-this">
         <div id="player-one">P1</div>
         <div id="player-two">P2</div>
       </div>
+    </section>
+    <section id="custom-theme">
+      <h3>Create a Theme</h3>
+      <label><input type="text" value="My Custom Theme" required/>Theme Name</label>
+      <label><input type="text" value="Player 1" required/>P1 Name</label>
+      <label><input type="text" value="Player 2" required/>P2 Name</label>
+
+      <div id="center-colors">
+        <div class="display-theme" id="page-color">&nbsp;<br/><input type="color" /><br/>Page</div>
+        <div class="display-theme" id="board-color">&nbsp;<br/><input type="color" /><br/>Board</div>
+        <div class="display-theme" id="p1">&nbsp;<br/><input type="color" /><br/>P1</div>
+        <div class="display-theme" id="p2">&nbsp;<br/><input type="color" /><br/>P2</div>
+      </div>
+      <button type="button" name="submit-custom" id="theme-button">Create Theme</button>
     </section>
     <script src="app.js"></script>
     <script src="theme.js"></script>

@@ -14,6 +14,8 @@ var activePlayer = 1;
 var gameTheme = ['#011EFE', '#FDFE02', '#000000', '#FF0000'];
 var playerOneColor = gameTheme[2];
 var playerTwoColor = gameTheme[3];
+var playerOneName = 'Player 1';
+var playerTwoName = 'Player 2';
 
 function setTheme() {
   if (localStorage.customTheme) {
@@ -24,6 +26,8 @@ function setTheme() {
   navButton.style.backgroundColor = gameTheme[1];
   playerOneColor = gameTheme[2];
   playerTwoColor = gameTheme[3];
+  playerOneName = gameTheme[4];
+  playerTwoName = gameTheme[5];
   for (var i = 0; i < linkSpan.length; i++) {
     linkSpan[i].style.color = gameTheme[0];
     linkSpan[i].style.backgroundColor = gameTheme[1];
@@ -45,10 +49,18 @@ function setTheme() {
   if (document.getElementById('player-one')) {
     document.getElementById('player-one').style.backgroundColor = gameTheme[2];
     document.getElementById('player-two').style.backgroundColor = gameTheme[3];
+    document.getElementById('player-one').style.color = gameTheme[3];
+    document.getElementById('player-two').style.color = gameTheme[2];
     document.getElementById('theme-select').style.backgroundColor = gameTheme[1];
     document.getElementById('theme-select').style.color = gameTheme[0];
-    document.getElementById('theme-button').style.backgroundColor = gameTheme[0];
-    document.getElementById('theme-button').style.color = gameTheme[1];
+    document.getElementById('custom-theme').style.backgroundColor = gameTheme[1];
+    document.getElementById('custom-theme').style.color = gameTheme[0];
+    document.getElementsByTagName('button')[0].style.backgroundColor = gameTheme[0];
+    document.getElementsByTagName('button')[0].style.color = gameTheme[1];
+    document.getElementsByTagName('button')[1].style.backgroundColor = gameTheme[0];
+    document.getElementsByTagName('button')[1].style.color = gameTheme[1];
+    document.getElementsByTagName('h3')[0].style.color = gameTheme[0];
+    document.getElementsByTagName('h3')[1].style.color = gameTheme[0];
   }
   if (document.getElementById('profile-area')) {
     document.getElementById('page-title').style.color = gameTheme[1];
@@ -106,7 +118,7 @@ function resetData() {
   var freshBoard = [[], [], [], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [], [], []];
   localStorage.saveBoard = JSON.stringify(freshBoard);
   localStorage.savePlayer = 1;
-  localStorage.pageText = JSON.stringify('First player to get four in a row wins. Player 1, it\'s your turn!');
+  localStorage.pageText = JSON.stringify('First player to get four in a row wins. ' + playerOneName + ', it\'s your turn!');
   window.location.reload();
 }
 
@@ -155,13 +167,23 @@ function placePiece() {
         for (var a = 0; a < boardCol.length; a++) {
           boardCol[a].removeEventListener('click', placePiece);
         }
-        gameText.innerText = 'Player ' + activePlayer + ' wins!';
+        if (activePlayer === 1) {
+          gameText.innerText = playerOneName + ' wins!';
+        }
+        else {
+          gameText.innerText = playerTwoName + ' wins!';
+        }
         localStorage.savePlayer = 1;
       }
       else {
-        if (activePlayer === 1) { activePlayer = 2; }
-        else { activePlayer = 1; }
-        gameText.innerText = 'Player ' + activePlayer + ', it\'s your turn';
+        if (activePlayer === 1) {
+          activePlayer = 2;
+          gameText.innerText = playerTwoName + ', it\'s your turn';
+        }
+        else {
+          activePlayer = 1;
+          gameText.innerText = playerOneName + ', it\'s your turn';
+        }
         localStorage.savePlayer = activePlayer;
       }
       localStorage.saveBoard = JSON.stringify(theBoard);
