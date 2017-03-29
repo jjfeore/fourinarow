@@ -165,7 +165,7 @@ h1 {
   margin: auto;
   background-color: #fdfe02;
   border-radius: 16px;
-  display: none;
+  display: block;
 }
 
 #custom-theme {
@@ -180,7 +180,7 @@ h1 {
   margin: auto;
   background-color: #fdfe02;
   border-radius: 16px;
-  display: block;
+  display: none;
 }
 
 input {
@@ -205,6 +205,7 @@ h3 {
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
   margin-top: 10px;
+  margin-bottom: -5px;
 }
 
 select {

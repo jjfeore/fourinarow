@@ -21,12 +21,12 @@
     <section id="theme-select">
       <h3>Select a Theme</h3>
       <select id="select-box">
-        <option value="classic">Classic</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-        <option value="dolphin">Miami Dolphins</option>
-        <option value="seahawk">Seattle Seahawks</option>
-        <option value="create" id="create-option">Create a Theme</option>
+        <option value="0">Classic</option>
+        <option value="1">Dark</option>
+        <option value="2">Light</option>
+        <option value="3">Miami Dolphins</option>
+        <option value="4">Seattle Seahawks</option>
+        <option value="999" id="create-option">Create a Theme</option>
       </select>
       <button type="button" name="submit-theme">Use this Theme!</button>
       <div id="center-this">
@@ -36,9 +36,9 @@
     </section>
     <section id="custom-theme">
       <h3>Create a Theme</h3>
-      <label><input type="text" />Theme Name</label>
-      <label><input type="text" />P1 Name</label>
-      <label><input type="text" />P2 Name</label>
+      <label><input type="text" value="My Custom Theme" required/>Theme Name</label>
+      <label><input type="text" value="Player 1" required/>P1 Name</label>
+      <label><input type="text" value="Player 2" required/>P2 Name</label>
 
       <div id="center-colors">
         <div class="display-theme" id="page-color">&nbsp;<br/><input type="color" /><br/>Page</div>
