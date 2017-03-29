@@ -9,7 +9,7 @@ var selectBox = document.getElementById('select-box');
 
 var defaultTheme = ['#011efe', '#fdfe02', '#000000', '#FF0000'];
 var darkTheme = ['#000000', '#666666', '#FFFFFF', '#333333'];
-var lightTheme = ['#FFFFFF', '#8f8f8f', '#666666', '#d6d6d6'];
+var lightTheme = ['#FFFFFF', '#8f8f8f', '#000000', '#666666'];
 var dolphinTheme = ['#008D97', '#F5811F', '#000000', '#FF0000'];
 var seahawkTheme = ['#002244', '#69BE28', '#A5ACAF', '#FF0000'];
 
@@ -34,7 +34,7 @@ function changeTheme() {
     if (localStorage.customTheme) {
       localStorage.removeItem('customTheme');
     };
-    localStorage.setItem('customTheme', JSON.stringify(lightkTheme));
+    localStorage.setItem('customTheme', JSON.stringify(lightTheme));
   } else if (selectedOption === 'dolphin') {
     document.body.style.backgroundColor = dolphinTheme[0];
     document.getElementById('theme-select').style.backgroundColor = dolphinTheme[1];
