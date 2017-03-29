@@ -17,6 +17,7 @@ body {
   font-size: 30px;
   text-align: center;
   color: #fdfe02;
+  pointer: cursor;
 }
 
 #refresh-button {
@@ -30,6 +31,7 @@ body {
   font-size: 30px;
   text-align: center;
   color: #fdfe02;
+  pointer: cursor;
 }
 
 nav a {
@@ -45,6 +47,35 @@ nav a {
   border-radius: 8px;
   overflow: hidden;
   display: none;
+  cursor: pointer;
+}
+
+#reset-box {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  width: 10%;
+  height: 90px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: none;
+  cursor: pointer;
+}
+
+.confirm-span {
+height: 30px;
+width: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+color: #fdfe02;
+font-size: 20px;
+padding: 8px 0px 2px 0px;
+margin: 0px;
+line-height: 20px;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+display: block;
+cursor: default;
 }
 
 .link-span {
