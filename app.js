@@ -106,6 +106,7 @@ function resetData() {
   var freshBoard = [[], [], [], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [], [], []];
   localStorage.saveBoard = JSON.stringify(freshBoard);
   localStorage.savePlayer = 1;
+  localStorage.pageText = JSON.stringify('First player to get four in a row wins. Player 1, it\'s your turn!');
   window.location.reload();
 }
 
