@@ -62,6 +62,7 @@ function setTheme() {
 setTheme();
 
 // Reload an existing game in localStorage
+
 if (localStorage.saveBoard && document.getElementById('board')) {
   theBoard = JSON.parse(localStorage.saveBoard);
   for (var a = 0; a < theBoard.length - 6; a ++) {
