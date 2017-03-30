@@ -182,9 +182,11 @@ function placePiece() {
   for (var i = 3; i < theBoard[colPos].length - 3; i++) {
     if (theBoard[colPos][i] === 0) {
       if (activePlayer === 1) {
+        this.children[8 - i].children[0].style.boxShadow = 'none';
         this.children[8 - i].children[0].style.backgroundColor = playerOneColor;
       }
       else {
+        this.children[8 - i].children[0].style.boxShadow = 'none';
         this.children[8 - i].children[0].style.backgroundColor = playerTwoColor;
       }
       theBoard[colPos][i] = activePlayer;
