@@ -11,11 +11,18 @@ var resetYes = document.getElementById('reset-yes');
 var resetNo = document.getElementById('reset-no');
 var linkSpan = document.getElementsByClassName('link-span');
 var activePlayer = 1;
-var gameTheme = ['#011EFE', '#FDFE02', '#000000', '#FF0000'];
+var gameTheme = ['#011EFE', '#FDFE02', '#000000', '#FF0000', 'Player 1', 'Player 2', 'Classic'];
 var playerOneColor = gameTheme[2];
 var playerTwoColor = gameTheme[3];
 var playerOneName = 'Player 1';
 var playerTwoName = 'Player 2';
+
+if (document.getElementById('page-color')) {
+  document.getElementById('page-color').style.backgroundColor = gameTheme[0];
+  document.getElementById('board-color').style.backgroundColor = gameTheme[1];
+  document.getElementById('p1').style.backgroundColor = gameTheme[2];
+  document.getElementById('p2').style.backgroundColor = gameTheme[3];
+}
 
 function setTheme() {
   if (localStorage.customTheme) {
@@ -61,6 +68,10 @@ function setTheme() {
     document.getElementsByTagName('button')[1].style.color = gameTheme[1];
     document.getElementsByTagName('h3')[0].style.color = gameTheme[0];
     document.getElementsByTagName('h3')[1].style.color = gameTheme[0];
+    document.getElementById('page-color').style.backgroundColor = gameTheme[0];
+    document.getElementById('board-color').style.backgroundColor = gameTheme[1];
+    document.getElementById('p1').style.backgroundColor = gameTheme[2];
+    document.getElementById('p2').style.backgroundColor = gameTheme[3];
   }
   if (document.getElementById('profile-area')) {
     document.getElementById('page-title').style.color = gameTheme[1];
@@ -88,7 +99,21 @@ if (localStorage.saveBoard && document.getElementById('board')) {
     }
   }
   activePlayer = parseInt(localStorage.savePlayer);
-  gameText.innerText = JSON.parse(localStorage.pageText);
+  if (localStorage.boardState == 0) {
+    gameText.innerText = 'First player to get four in a row wins. ' + playerOneName + ', it\'s your turn!';
+  }
+  if (localStorage.boardState == 1 && activePlayer == 1) {
+    gameText.innerText = playerOneName + ', it\'s your turn';
+  }
+  if (localStorage.boardState == 1 && activePlayer == 2) {
+    gameText.innerText = playerTwoName + ', it\'s your turn';
+  }
+  if (localStorage.boardState == 2 && activePlayer == 1) {
+    gameText.innerText = playerOneName + ' wins!';
+  }
+  if (localStorage.boardState == 2 && activePlayer == 2) {
+    gameText.innerText = playerTwoName + ' wins!';
+  }
 }
 
 // Reset the game
@@ -118,7 +143,7 @@ function resetData() {
   var freshBoard = [[], [], [], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [-1, -1, -1, 0, 0, 0, 0, 0, 0, -1, -1, -1], [], [], []];
   localStorage.saveBoard = JSON.stringify(freshBoard);
   localStorage.savePlayer = 1;
-  localStorage.pageText = JSON.stringify('First player to get four in a row wins. ' + playerOneName + ', it\'s your turn!');
+  localStorage.boardState = 0;
   window.location.reload();
 }
 
@@ -173,7 +198,8 @@ function placePiece() {
         else {
           gameText.innerText = playerTwoName + ' wins!';
         }
-        localStorage.savePlayer = 1;
+        localStorage.savePlayer = activePlayer;
+        localStorage.boardState = 2;
       }
       else {
         if (activePlayer === 1) {
@@ -185,9 +211,9 @@ function placePiece() {
           gameText.innerText = playerOneName + ', it\'s your turn';
         }
         localStorage.savePlayer = activePlayer;
+        localStorage.boardState = 1;
       }
       localStorage.saveBoard = JSON.stringify(theBoard);
-      localStorage.pageText = JSON.stringify(gameText.innerText);
       break;
     }
   }
