@@ -55,6 +55,10 @@ function changeTheme() {
   }
 }
 
+function userAlert() {
+  alert('Please use a more dynamic color scheme!');
+}
+
 function createTheme() {
   var inputFields = document.getElementsByTagName('input');
   var newTheme = [];
@@ -65,6 +69,18 @@ function createTheme() {
   newTheme.push(inputFields[1].value);
   newTheme.push(inputFields[2].value);
   newTheme.push(inputFields[0].value);
+
+  if (inputFields[3].value === inputFields[4].value || inputFields[3].value === inputFields[5].value || inputFields[3].value === inputFields[6].value) {
+    userAlert();
+    return true;
+  } else if (inputFields[4].value === inputFields[5].value || inputFields[4].value === inputFields[6].value) {
+    userAlert();
+    return true;
+  } else if (inputFields[5].value === inputFields[6].length) {
+    userAlert();
+    return true;
+  }
+
   themeArray.unshift(newTheme);
   localStorage.customTheme = JSON.stringify(themeArray[0]);
   setTheme();
