@@ -78,5 +78,5 @@ function createTheme() {
 }
 
 function changeColor() {
-  this.parentNode.style.backgroundColor = this.children[0].value;
+  this.style.backgroundColor = this.children[0].value;
 }
