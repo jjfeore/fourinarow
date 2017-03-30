@@ -18,7 +18,7 @@ body {
   font-size: 30px;
   text-align: center;
   pointer: cursor;
-  box-shadow: 5px 5px 10px #334d4d;
+  box-shadow: 5px 5px 10px #4d4d33;
 }
 
 #refresh-button {
@@ -33,7 +33,7 @@ body {
   font-size: 30px;
   text-align: center;
   pointer: cursor;
-  box-shadow: 5px 5px 10px #334d4d;
+  box-shadow: 5px 5px 10px #4d4d33;
 }
 
 nav a {
@@ -114,7 +114,7 @@ display: block;
   margin: -25px auto 0px auto;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 5px 5px 10px #334d4d;
+  box-shadow: 5px 5px 10px #4d4d33;
 }
 
 .board-col {
@@ -136,7 +136,7 @@ display: block;
   left: 10px;
   margin: 0px;
   padding: 0px;
-  box-shadow: 5px 5px 10px #334d4d inset;
+  box-shadow: 5px 5px 10px #4d4d33 inset;
 }
 
 .board-hole {
