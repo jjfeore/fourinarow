@@ -17,6 +17,11 @@ var playerTwoColor = gameTheme[3];
 var playerOneName = 'Player 1';
 var playerTwoName = 'Player 2';
 
+document.getElementById('page-color').style.backgroundColor = gameTheme[0];
+document.getElementById('board-color').style.backgroundColor = gameTheme[1];
+document.getElementById('p1').style.backgroundColor = gameTheme[2];
+document.getElementById('p2').style.backgroundColor = gameTheme[3];
+
 function setTheme() {
   if (localStorage.customTheme) {
     gameTheme = JSON.parse(localStorage.customTheme);
@@ -61,6 +66,10 @@ function setTheme() {
     document.getElementsByTagName('button')[1].style.color = gameTheme[1];
     document.getElementsByTagName('h3')[0].style.color = gameTheme[0];
     document.getElementsByTagName('h3')[1].style.color = gameTheme[0];
+    document.getElementById('page-color').style.backgroundColor = gameTheme[0];
+    document.getElementById('board-color').style.backgroundColor = gameTheme[1];
+    document.getElementById('p1').style.backgroundColor = gameTheme[2];
+    document.getElementById('p2').style.backgroundColor = gameTheme[3];
   }
   if (document.getElementById('profile-area')) {
     document.getElementById('page-title').style.color = gameTheme[1];
