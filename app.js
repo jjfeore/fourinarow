@@ -17,10 +17,12 @@ var playerTwoColor = gameTheme[3];
 var playerOneName = 'Player 1';
 var playerTwoName = 'Player 2';
 
-document.getElementById('page-color').style.backgroundColor = gameTheme[0];
-document.getElementById('board-color').style.backgroundColor = gameTheme[1];
-document.getElementById('p1').style.backgroundColor = gameTheme[2];
-document.getElementById('p2').style.backgroundColor = gameTheme[3];
+if (document.getElementById('page-color')) {
+  document.getElementById('page-color').style.backgroundColor = gameTheme[0];
+  document.getElementById('board-color').style.backgroundColor = gameTheme[1];
+  document.getElementById('p1').style.backgroundColor = gameTheme[2];
+  document.getElementById('p2').style.backgroundColor = gameTheme[3];
+}
 
 function setTheme() {
   if (localStorage.customTheme) {

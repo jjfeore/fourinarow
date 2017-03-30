@@ -272,6 +272,7 @@ button {
   border-radius: 100%;
   vertical-align: middle;
   line-height: 25px;
+  padding-top: 25px;
   margin-right: 10px;
 }
 
